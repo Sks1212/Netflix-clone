@@ -154,7 +154,7 @@ nav {
 }
 
 .features {
-    padding: 50px 12%;
+    padding: 50px 10%;
     font-size: 22px;
 }
 
@@ -162,7 +162,16 @@ nav {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 50px 0;
+    padding: 50px;
+}
+
+.p{
+    margin: auto;
+    max-width: calc(100%-3rem);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .text-col, .media-col {
@@ -175,10 +184,9 @@ nav {
     order: 2;
 }
 
-
 .media-col img {
     display: block;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -206,7 +214,6 @@ nav {
     width: 400px;
     z-index: -1;
 }
-
 
 .features h2 {
     font-size: 50px;
@@ -342,8 +349,7 @@ footer h2 {
     font-size: 14px;
     margin-top: 40px;
     margin-bottom: 10px; 
-    text-decoration: none;
-    
+    text-decoration: none;  
 }
 
 @media only screen and (max-width: 600px) {
@@ -352,6 +358,10 @@ footer h2 {
         height: auto;
     }
 
+    .button-container{
+        width: calc(100% + 0.5rem);
+    }
+   
     nav {
         padding-left: 1%;
         padding-right: 1%;
@@ -359,15 +369,27 @@ footer h2 {
 
     nav .button-container{
         padding: 0;  
+        width: calc(100% + 0.5rem);
+    }
+
+    .language-btn{
+        display: block;
+        font-size: 0; /* Oculta el texto */
+        padding: 6px 28px 6px 36px; /* Ajusta el padding para el nuevo tamaño del botón */
+        
     }
 
     .header-top {
-        padding: 10px 20px;
+        padding-top: rem;
     }
 
     .header-bottom{
         text-align: center;
         padding:0 1.5rem;
+    }
+
+    .header-bottom p{
+        font-size: 1.125rem;
     }
 
     .header-content {
@@ -376,17 +398,22 @@ footer h2 {
         padding-top: 10px;
     }
 
+    .header-content h3 {
+        font-size: 1rem;
+    }
+
     .header-content h1 {
+        margin-block-start: 1em;
         font-size: 30px;
     }
-    
+
     .email-signup {
         flex-direction: column; /* Change the direction to column */
         align-items: center; /* Center align items */
     }
 
     .email-signup input {
-        width: 100%; /* Make the input full width */
+        width: 90%; /* Make the input full width */
         margin-bottom: 10px; /* Add some space between input and button */
     }
 
@@ -394,6 +421,12 @@ footer h2 {
         font-size: 1rem; /* Adjust the font size */
         padding: 0.5rem 1rem; /* Adjust the padding */
         max-width: 100%; /* Allow the button to adjust to the width of its content */
+        vertical-align: text-top;
+        width: auto;
+        font-size: 1.125rem;
+        font-weight: 500;
+        min-height: 3rem;
+        padding: 0.5rem 1rem;
     }
 
     .features {
@@ -401,28 +434,27 @@ footer h2 {
         font-size: 22px;
     }
 
-    .row {
-        display: block;
+    .row { 
         align-items: center;
         width: 100%;
         flex-wrap: wrap;
-        padding: 50px 0;
+        padding: 50px;
     }
 
-    .text-col, .media-col {
+
+    .text-col, .media-col, .media-col1, .media-col2 {
         flex-basis: 100%;
         margin-bottom: 20px;
     }
 
-    .media-col img{
-        display: block;
-        width: 90%;
+    .media-col, .media-col1 img, .media-col2 img{
+        width: 100%;
         margin: auto;
     }
 
     .media-col1 video{
-        width: 72%;
-        height: auto;
+        max-width: 73%; /* Adjust as needed */
+        max-height: 54%; /* Adjust as needed */
         position: absolute;
         top: 48%;
         left: 50%;
@@ -430,18 +462,12 @@ footer h2 {
     }
 
     .media-col2 video {
-        width: 65%;
-        height: auto;
+        max-width: 55%; /* Adjust as needed */
+        max-height: 54%; /* Adjust as needed */
         position: absolute;
-        top: 35%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
-
-    .media-col1 img,.media-col2 img {
-        display: block;
-        width: 90%;
-        margin: auto;
     }
 
     .faq .email-signup {
@@ -502,7 +528,82 @@ footer h2 {
         text-decoration: underline;
         flex-basis: calc(50% - 10px);
         margin-bottom: 20px;
-    }
+    } 
 
 }
 
+@media only screen and (max-width: 1200px) {
+
+    .header-content h1 {
+        display: block;
+        font-size: 2rem;
+        margin-block-start: 1em;
+    }
+
+    .features h2 {
+        font-size: 35px;
+    }
+
+    .features p{
+        font-size: 1.125rem;
+    }
+
+    .row {
+        display: block;
+        align-items: center;
+        width: 100%;
+        padding: 50px;
+    }
+
+    .text-col h2, .text-col p{
+        text-align: center;
+
+    }
+    .media-col, .media-col1 img, .media-col2 img{
+        width: 100%;
+        margin: auto;
+    }
+
+    .media-col1 video{
+        max-width: 80%; /* Adjust as needed */
+        max-height: 54%; /* Adjust as needed */
+        position: absolute;
+        top: 48%;
+        left: 50%;
+        width: 505px;
+        transform: translate(-50%, -50%);
+    }
+
+    .media-col2 video {
+        max-width: 60%; /* Adjust as needed */
+        max-height: 54%; /* Adjust as needed */
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 505px;
+        transform: translate(-50%, -50%);
+    }
+
+    .faq {
+        padding: 10px 3%;
+        text-align: center;
+    }
+
+    .footer .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+
+    .footer .col {
+        text-decoration: underline;
+        flex-basis: 50%; /* Set each column to take up 50% of the width */
+        margin-bottom: 20px;
+    }
+
+    .footer{
+        padding: 10px 4%;
+    }
+  
+}
